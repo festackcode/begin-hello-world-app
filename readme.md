@@ -1,23 +1,40 @@
-<img src="https://static.begin.app/deno-hello-world/readme-banner.png" width="813">
+# Nirvana Inventory App (Angular)
 
-[![Begin build status](https://buildstatus.begin.app/goat-5bh/status.svg)](https://begin.com)
+A simple responsive Angular app for inventory selection and quantity submission.
 
+## What it does
+- Shows an admin-style responsive UI
+- Lets user select category:
+  - Vanzon items
+  - Vegetables
+  - Meat Items
+  - Bar Inventory Items
+  - Wines
+  - Miscellaneous items
+- Displays category items in a table with:
+  - Item pic (placeholder badge)
+  - Item name
+  - Quantity input (`number`)
+- On submit:
+  - Generates an Excel file (`.xlsx`)
+  - Sends to `nirvanakitchenleuven@gmail.com` via:
+    - EmailJS (optional config), or
+    - mailto fallback with summary and instruction to attach generated Excel
 
-## Deploy your own
+## Run locally
+```bash
+npm start
+```
+Open: `http://localhost:4200`
 
-[![Deploy to Begin](https://static.begin.com/deploy-to-begin.svg)](https://begin.com/apps/create?template=https://github.com/begin-examples/deno-hello-world)
+## Deploy to GitHub Pages
+This is a static Angular-in-browser app (ES modules), so you can deploy as static files directly:
+1. Push repository to GitHub
+2. In GitHub repo settings, enable Pages from the default branch root
+3. Ensure `index.html`, `main.js`, and `styles.css` are in the published root
 
-Deploy your own clone of this app to Begin!
-
-
-## Getting started
-
-- Initialize your deps: `npm install`
-- Start the local dev server: `npm start`
-
-
-## Reference
-- [Quickstart](https://docs.begin.com/en/guides/quickstart/) - basics on working locally, project structure, deploying, and accessing your Begin app
-- [Creating new routes](https://docs.begin.com/en/functions/creating-new-functions) - basics on expanding the capabilities of your app
-
-Head to [docs.begin.com](https://docs.begin.com/) to learn more!
+## Optional: EmailJS auto-send setup
+Edit `main.js` and set values in `emailJsConfig`:
+- `publicKey`
+- `serviceId`
+- `templateId`
